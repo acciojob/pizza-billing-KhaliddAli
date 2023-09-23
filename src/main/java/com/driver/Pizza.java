@@ -26,13 +26,14 @@ public class Pizza {
     }
     private int cheese =0;
     public void addExtraCheese(){
+        if(this.cheese != 0) return;
         // your code goes here
         this.price += 80;
         this.cheese += 80;
     }
     private int topping =0;
     public void addExtraToppings(){
-        
+        if(this.topping !=0 ) return;
         if(this.isVeg == true) {
             this.price+=70;
             this.topping += 70;
