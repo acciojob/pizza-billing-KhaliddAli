@@ -5,18 +5,18 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-
+    private int base =0;
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
         this.bill = "";
         if(this.isVeg) {
             this.price += 300;
-            this.bill += "Base Price Of The Pizza: 300 \n" ;
+            this.base += 300; ;
         }
         else{
             this.price += 400;
-            this.bill += "Base Price Of The Pizza: 400 \n" ;
+            this.base += 400; ;
         }
 
     }
@@ -24,38 +24,44 @@ public class Pizza {
     public int getPrice(){
         return this.price;
     }
-
+    private int cheese =0;
     public void addExtraCheese(){
         // your code goes here
-        if(this.bill.contains("Extra Cheese Added: 80")) {
-            return;
-        }
-        this.price+=80;
-        this.bill += "Extra Cheese Added: 80 \n" ;
+        this.price += 80;
+        this.cheese += 80;
     }
-
+    private int topping =0;
     public void addExtraToppings(){
-        if(this.bill.contains("Extra Toppings Added:")) {
-            return;
-        }
-        // your code goes here
+        
         if(this.isVeg == true) {
             this.price+=70;
-            this.bill += "Extra Toppings Added: 70 \n" ;
+            this.topping += 70;
         }
         else{
             this.price+=120;
-            this.bill += "Extra Toppings Added: 120 \n" ;
+            this.topping += 120 ;
         }
     }
+    private int paper = 0;
     public void addTakeaway(){
+        if(paper != 0) return;
         // your code goes here
         this.price += 20;
-        this.bill += "Paperbag Added: 20 \n" ;
+        this.paper += 20; ;
     }
 
     public String getBill(){
         // your code goes here
+        this.bill += "Base Price Of The Pizza: " + this.base + "\n";
+        if(this.cheese != 0) {
+            this.bill += "Extra Cheese Added: " + this.cheese + "\n";
+        }
+        if(this.topping !=0) {
+            this.bill += "Extra Toppings Added: " + this.topping + "\n" ;
+        }
+        if(this.paper != 0) {
+            this.bill += "Paperbag Added: " + this.paper + "\n";
+        }
         this.bill += "Total Price: " + this.price ;
         return this.bill;
     }
