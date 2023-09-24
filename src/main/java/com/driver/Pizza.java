@@ -50,9 +50,10 @@ public class Pizza {
         this.price += 20;
         this.paper += 20; ;
     }
-
+    private boolean flag = false;
     public String getBill(){
         // your code goes here
+        if(flag) return "";
         this.bill += "Base Price Of The Pizza: " + this.base + "\n";
         if(this.cheese != 0) {
             this.bill += "Extra Cheese Added: " + this.cheese + "\n";
@@ -63,7 +64,7 @@ public class Pizza {
         if(this.paper != 0) {
             this.bill += "Paperbag Added: " + this.paper + "\n";
         }
-        this.bill += "Total Price: " + this.price + "\n";
+        this.bill += "Total Price: " + this.price + "\n ";
         return this.bill;
     }
 }
