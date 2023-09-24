@@ -54,7 +54,7 @@ public class Pizza {
     public String getBill(){
         // your code goes here
         if(flag) return "";
-        this.bill += "Base Price Of The Pizza: " + this.base + "\n";
+        
         if(this.cheese != 0) {
             this.bill += "Extra Cheese Added: " + this.cheese + "\n";
         }
@@ -65,6 +65,7 @@ public class Pizza {
             this.bill += "Paperbag Added: " + this.paper + "\n";
         }
         this.bill += "Total Price: " + this.price + "\n ";
+        flag = true;
         return this.bill;
     }
 }
