@@ -13,10 +13,12 @@ public class Pizza {
         if(this.isVeg) {
             this.price += 300;
             this.base += 300; ;
+            this.bill += "\n" + "Base Price Of The Pizza: " + this.base + "\n" ;
         }
         else{
             this.price += 400;
             this.base += 400; ;
+            this.bill += "\n" + "Base Price Of The Pizza: " + this.base + "\n" ;
         }
 
     }
@@ -64,7 +66,7 @@ public class Pizza {
         if(this.paper != 0) {
             this.bill += "Paperbag Added: " + this.paper + "\n";
         }
-        this.bill += "Total Price: " + this.price + "\n ";
+        this.bill += "Total Price: " + this.price;
         flag = true;
         return this.bill;
     }
