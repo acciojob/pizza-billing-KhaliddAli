@@ -20,21 +20,18 @@ public class Pizza {
         // your code goes here
         if(isVeg) {
             this.base = 300;
-            this.cheese = 80;
             this.topping = 70;
-            this.paper = 20;
         }
         else{
             this.base = 400;
-            this.cheese = 80;
             this.topping = 120;
-            this.paper = 20;
             
         }
 
         this.bill = "Base Price Of The Pizza: " + this.base + "\n";
         this.price = this.base;
-        
+        this.cheese = 80;
+        this.paper = 20;
     }
 
     public int getPrice(){
@@ -42,7 +39,7 @@ public class Pizza {
     }
     
     public void addExtraCheese(){
-        if(!this.ischeese){
+        if(this.ischeese == false){
             this.price += this.cheese;
             this.ischeese = true;
         }
@@ -50,7 +47,7 @@ public class Pizza {
     }
     
     public void addExtraToppings(){
-        if(!this.istopping){
+        if(this.istopping == false){
             this.price += this.topping;
             this.istopping = true;
         }
@@ -58,7 +55,7 @@ public class Pizza {
     }
     
     public void addTakeaway(){
-        if(! this.ispaper){
+        if(this.ispaper == false){
             this.price += this.paper;
             this.ispaper = true;
         }
