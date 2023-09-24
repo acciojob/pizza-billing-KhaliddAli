@@ -13,12 +13,11 @@ public class Pizza {
         if(this.isVeg) {
             this.price += 300;
             this.base += 300; ;
-            this.bill += "Base Price Of The Pizza: " + this.base + "\n" ;
+            
         }
         else{
             this.price += 400;
             this.base += 400; ;
-            this.bill +="Base Price Of The Pizza: " + this.base + "\n" ;
         }
 
     }
@@ -56,7 +55,7 @@ public class Pizza {
     public String getBill(){
         // your code goes here
         if(flag) return "";
-        
+        this.bill += "Base Price Of The Pizza: " + this.base + "\n" ;
         if(this.cheese != 0) {
             this.bill += "Extra Cheese Added: " + this.cheese + "\n";
         }
