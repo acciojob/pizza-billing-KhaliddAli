@@ -77,8 +77,8 @@ public class Pizza {
         if(this.ispaper) {
             this.bill += "Paperbag Added: " + this.paper + "\n";
         }
-
-        return this.bill + "Total Price: " + this.price +"\n";
+        this.bill += "Total Price: " + this.price +"\n" ;
+        return this.bill;
         
     }
 }
